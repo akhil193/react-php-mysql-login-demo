@@ -10,7 +10,6 @@ use ReallySimpleJWT\Token;
 /**
  * Sample data for demonstration
  */
-$userId = 1;
 $secret = 'sec!ReT423*&';
 $expiration = time() + 3600;
 $issuer = 'localhost';
@@ -43,7 +42,7 @@ header('Content-type: application/json');
 //check example if from db query
 if($validCredentials){
 	
-	$token = Token::create($userId, $secret, $expiration, $issuer);
+	$token = Token::create($data->username, $secret, $expiration, $issuer);
 
 	/**
 	 * Create response 200 ok
